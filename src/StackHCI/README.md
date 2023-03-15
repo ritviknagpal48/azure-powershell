@@ -109,4 +109,8 @@ directive:
     set:
       default:
         script: '"default"'
+  # Update ExtensionParameters.settings
+  - from: swagger-document
+    where: $.definitions.ExtensionParameters.settings
+    transform: $["additionalProperties"] = "true"
 ```
